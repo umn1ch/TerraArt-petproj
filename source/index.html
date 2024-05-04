@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>TerraArt</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="styles/css/styles.css">
+    <link rel="stylesheet" href="styles/css/bootstrap.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/nouislider/dist/nouislider.css">
+    <script src="/nouislider/dist/nouislider.js"></script>
+    <script src="/nouislider/dist/nouislider.mjs"></script>
+    <script src="scripts/index.js" defer></script>
+
+  </head>
+  <body class="page__body" data-bs-spy="scroll" data-bs-target="#navbar">
+    <nav class="navbar sticky-top navbar-expand-md bg-body-tertiary">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand"><img src="images/final-logo.png" alt="" height="25" width="90"></a>
+        <a href="#" class="nav-link to-hide" id="login">
+          <img src="/source/images/icons/navigation account.svg" alt="#">
+        </a>
+        <a href="#" class="nav-link to-hide">
+          <img src="/source/images/icons/navigation basket.svg" alt="#">
+        </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <ul class="navbar-nav mb-0 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#main">Главная</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#features">Преимущества</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#catalog">Каталог</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#address">Адрес</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#footer">О нас</a>
+              </li>
+            </ul>
+            <span class="target"></span>
+        </div>
+        <a href="#" class="nav-link mobile-hidden" id="login" onclick="window.loginPanel.showModal();">
+          <img src="/source/images/icons/navigation account.svg" alt="#">
+            <p class="mobile-hidden-text">Войти</p>
+        </a>
+        <dialog id="loginPanel">
+          <div class="container" id="container">
+            <div class="form-container sign-up-container">
+              <form action="#">
+                <h1>Создать аккаунт</h1>
+                <div class="social-container">
+                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>или использовать свой e-mail</span>
+                <input type="text" placeholder="Как нам Вас называть?" />
+                <input type="email" placeholder="Ваша почта" />
+                <input type="password" placeholder="Придумайте пароль" />
+                <button>Зарегистрироваться</button>
+              </form>
+            </div>
+            <div class="form-container sign-in-container">
+              <form action="#">
+                <h1>Войти</h1>
+                <div class="social-container">
+                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>или использовать свой аккаунт</span>
+                <input type="email" placeholder="Ваша почта" />
+                <input type="password" placeholder="Ваш пароль" />
+                <a href="#">Забыли пароль?</a>
+                <button>Войти</button>
+              </form>
+            </div>
+            <div class="overlay-container">
+              <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                  <h1>С возвращением!</h1>
+                  <p>Войдите в аккаунт, чтобы получать персонализированные предложения.</p>
+                  <button class="ghost" id="signIn">Войти</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                  <h1>Приветствуем!</h1>
+                  <p>Пожалуйста, введите свои персональные данные. <br> Не беспокойтесь, мы храним их в секрете. </p>
+                  <button class="ghost" id="signUp">Зарегистрироваться</button>
+                </div>
+              </div>
+            </div>
+            <button class="login-close ghost" onclick="window.loginPanel.close();"
+            aria-label="close" class="x"
+            id="login-close">❌</button>
+          </div>
+        </dialog>
+        <a href="#" class="nav-link mobile-hidden">
+          <img src="/source/images/icons/navigation basket.svg" alt="#">
+            <p class="mobile-hidden-text">Корзина</p>
+        </a>
+      </nav>
+      <section class="first-section" id="main">
+        <!-- DESKTOP SLIDER -->
+        <div class="container">
+          <div class="desktop-carousel">
+              <input type="radio" name="slides" checked="checked" id="slide-1">
+              <input type="radio" name="slides" id="slide-2">
+              <input type="radio" name="slides" id="slide-3">
+              <ul class="carousel__slides">
+                  <li class="carousel__slide">
+                      <figure>
+                          <div>
+                              <img src="images/nabor_light.png" alt="">
+                          </div>
+                          <figcaption>
+                            Для настоящих ценителей нестареющей классики.
+                              <span class="credit">Набор Санторини</span>
+                          </figcaption>
+                      </figure>
+                  </li>
+                  <li class="carousel__slide">
+                      <figure>
+                          <div>
+                              <img src="images/nabor_sunny.png" alt="">
+                          </div>
+                          <figcaption>
+                            Самый солнечный набор прямиком из тропиков для ярких и смелых.
+                              <span class="credit">Набор Рио</span>
+                          </figcaption>
+                      </figure>
+                  </li>
+                  <li class="carousel__slide">
+                      <figure>
+                          <div>
+                              <img src="images/nabor_colorful.png" alt="">
+                          </div>
+                          <figcaption>
+                            Нежность из мировой столицы моды для самых утонченных натур.
+                              <span class="credit">Набор Милан</span>
+                          </figcaption>
+                      </figure>
+                  </li>
+              </ul>
+              <ul class="carousel__thumbnails">
+                  <li>
+                      <label for="slide-1"><img src="images/nabor_light_x0.5.png" alt="" height="40" width="40"></label>
+                  </li>
+                  <li>
+                      <label for="slide-2"><img src="images/nabor_sunny_x0.5.png" alt=""></label>
+                  </li>
+                  <li>
+                      <label for="slide-3"><img src="images/nabor_colorful_x0.5.png" alt=""></label>
+                  </li>
+                  <li>
+              </ul>
+          </div>
+      </div>
+
+        <!-- MOBILE SLIDER -->
+            <div id="carouselExampleInterval" class="carousel carousel-dark slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                  <img src="images/nabor_light.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <h5>Набор Санторини</h5>
+                    <p>Для настоящих ценителей нестареющей классики.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                  <img src="images/nabor_sunny.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <h5>Набор Рио</h5>
+                    <p>Самый солнечный набор прямиком из тропиков для ярких и смелых.</p>
+                  </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                  <img src="images/nabor_colorful.png" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-md-block">
+                    <h5>Набор Милан</h5>
+                    <p>Нежность из мировой столицы моды для самых утонченных натур.</p>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- ЦВЕТ ИЗМЕНЕН В VARIABLES SCSS -->
+          <section class="features" id="features">
+            <h1 class="display-6">Преимущества</h1>
+            <h1 class="display-5">Главные причины выбрать TerraArt</h1>
+            <div class="container">
+              <div class="row row-cols-1 row-cols-md-3">
+                <div class="col">
+                  <img class="centered-inside" src="images/icon-speed.png" alt="">
+                  <p class="centered-inside">Доставка по Москве за несколько часов.</p>
+
+                </div>
+                <div class="col">
+                  <img class="centered-inside" src="images/icon-convenience.png" alt="">
+                  <p class="centered-inside">Каждое изделие создается мастерами вручную с любовью.</p>
+                </div>
+                <div class="col">
+                  <img class="centered-inside" src="images/icon-eco-friendly.png" alt="">
+                  <p class="centered-inside">Наши упаковки сделаны из переработанных и разлагаемых материалов.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="catalog" id="catalog">
+            <h1 class="display-6">Каталог</h1>
+            <h1 class="display-5">Каталог посуды ручной работы</h1>
+            <div class="flex-no-bootstrap">
+              <div class="padding-container">
+            <div class="filter-container">
+            <div class="price-container">
+              <h5>Цена</h5>
+              <div class="slider-box">
+                <div id="slider"></div>
+              </div>
+              <div class="pricing-box">
+                <div class="price-box range-min">
+                  <div class="price-in-box" id="min-price">800</div>
+                </div>
+                <img src="images/icons/catalog pricerange icon.svg" alt="#carouselExampleDark">
+                <div class="price-box range-max">
+                  <div class="price-in-box" id="max-price">3200</div>
+                </div>
+              </div>
+            </div>
+
+            <form id="type">
+              <h5>Тип изделия</h5>
+              <label>
+                <input type="radio" id="option1" name="type" value="Неважно" checked>
+                <span>Тарелки</span>
+              </label>
+              <label>
+                <input type="radio" id="option2" name="type" value="Только животное">
+                <span>Кружки</span>
+              </label>
+              <label>
+                <input type="radio" id="option2" name="type" value="Только животное">
+                <span>Миски</span>
+              </label>
+              <label>
+                <input type="radio" id="option3" name="type" value="Только растительное">
+                <span>Наборы посуды</span>
+              </label>
+              <label>
+                <input type="radio" id="option4" name="type" value="Без молока" disabled>
+                <span>Вазы</span>
+              </label>
+            </form>
+
+            <div class="catalog__country-container">
+            <form id="material">
+              <h5>Материал изготовления</h5>
+            <label>
+              <input type="checkbox" name="materials" value="Бразилия" checked>
+              <span>Керамика</span>
+            </label>
+            <label>
+              <input type="checkbox" name="materials" value="Только животное">
+              <span>Фарфор</span>
+            </label>
+            <label>
+              <input type="checkbox" name="materials" value="Колумбия">
+              <span>Стекло</span>
+            </label>
+            <label>
+              <input type="checkbox" name="materials" value="Коста-Рика">
+              <span>Сталь</span>
+            </label>
+            <label>
+              <input type="checkbox" name="materials" value="Перу" disabled>
+              <span>Пластик</span>
+            </label>
+          </form>
+          </div>
+          </div>
+          <div class="filter__buttons-container">
+            <div class="mobile-big primary-button button"
+                  id="submit-filter-button"
+                  onclick="window.dialog.showModal();">Применить</div>
+                  <dialog id="dialog">
+                    <h2>Сервер получил GET-запрос</h2>
+                    <span>Цена: </span><p class="filter-to-server" id="to-server-pricing"></p>
+                    <span>Тип изделия: </span><p class="filter-to-server" id="to-server-type"></p>
+                    <span>Материал: </span><p class="filter-to-server" id="to-server-materials"></p>
+                    <button onclick="window.dialog.close();" aria-label="close" class="x">❌</button>
+                  </dialog>
+
+            <div class="mobile-big secondary-button button" id="add-margin">Сбросить</div>
+          </div>
+        </div>
+
+          <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
+            <div class="catalog__card-container">
+              <div class="card__image-box"></div>
+              <p class="catalog__card-heading text-heading"></p>
+              <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="card__checkout-box">
+                <p class="catalog__card-price price">225₽</p>
+                <p class="card__button primary-button button">
+                  <img src="/source/images/icons/checkout button.svg" alt="">
+                  В корзину
+                </p>
+              </div>
+            </div>
+            <div class="catalog__card-container">
+              <div class="card__image-box"></div>
+              <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
+              <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="card__checkout-box">
+                <p class="catalog__card-price price">225₽</p>
+                <p class="card__button primary-button button">
+                  <img src="/source/images/icons/checkout button.svg" alt="">
+                  В корзину
+                </p>
+              </div>
+            </div>
+            <div class="catalog__card-container">
+              <div class="card__image-box"></div>
+              <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
+              <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="card__checkout-box">
+                <p class="catalog__card-price price">225₽</p>
+                <p class="card__button primary-button button">
+                  <img src="/source/images/icons/checkout button.svg" alt="">
+                  В корзину
+                </p>
+              </div>
+            </div>
+            <div class="catalog__card-container">
+              <div class="card__image-box"></div>
+              <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
+              <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="card__checkout-box">
+                <p class="catalog__card-price price">225₽</p>
+                <p class="card__button primary-button button">
+                  <img src="/source/images/icons/checkout button.svg" alt="">
+                  В корзину
+                </p>
+              </div>
+            </div>
+            <div class="catalog__card-container">
+              <div class="card__image-box"></div>
+              <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
+              <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="card__checkout-box">
+                <p class="catalog__card-price price">225₽</p>
+                <p class="card__button primary-button button">
+                  <img src="/source/images/icons/checkout button.svg" alt="">
+                  В корзину
+                </p>
+              </div>
+            </div>
+            <div class="catalog__card-container">
+              <div class="card__image-box"></div>
+              <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
+              <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
+              <div class="card__checkout-box">
+                <p class="catalog__card-price price">225₽</p>
+                <p class="card__button primary-button button">
+                  <img src="/source/images/icons/checkout button.svg" alt="">
+                  В корзину
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- REVERSED BC ROW-REVERSE FLEX DIRECTION -->
+          <ul class="catalog__page-selector">
+            <li class="catalog__select-page secondary-button button" id="Next">Вперед
+                <img src="images/Next.png" alt="" class="to-hide">
+            </li>
+            <li class="catalog__select-page secondary-button button">3</li>
+            <li class="catalog__select-page secondary-button button active-button">2</li>
+            <li class="catalog__select-page secondary-button button">1</li>
+            <li class="catalog__select-page secondary-button button" id="Previous">Назад
+              <img src="images/Previous.png" alt="" class="to-hide">
+            </li>
+          </ul>
+          </section>
+          <section id="address">
+          <h1 class="display-6">Как нас найти</h1>
+          <h1 class="display-5">Адрес нашего уютного магазина</h1>
+          <div class="map-container">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A9b0220fc05bfa861c859ae439279aeb765b6f8be8ab110ebc615e9875b377577&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+          </div>
+        </section>
+          <section class="footer" id="footer">
+            <div class="footer__flex-container">
+              <div class="footer__socials-container">
+                <div class="footer__logo"><img src="images/final-logo.png" alt="" height="25" width="90"></div>
+                <div class="footer--desktop-only">Интернет-магазин посуды</div>
+                <div class="footer__socials">
+                  <ul class="socials__list">
+                    <li class="socials__item"><a href="#" class="socials__link"><img src="images/icons/footer social vk icon.svg" alt=""></a></li>
+                    <li class="socials__item"><a href="#" class="socials__link"><img src="images/icons/footer social pinterest icon.svg" alt=""></a></li>
+                    <li class="socials__item"><a href="#" class="socials__link"><img src="images/icons/footer social ok logo.svg" alt=""></a></li>
+                  </ul>
+                </div>
+              </div>
+              <span class="mobile-divider"></span>
+              <div class="footer__sections-container">
+                <p class="themed-heading">Интернет-магазин</p>
+                <ul class="footer__sections-list">
+                  <li class="sections__item"><a href="" class="sections__link">Почему мы</a></li>
+                  <li class="sections__item"><a href="" class="sections__link">Каталог</a></li>
+                  <li class="sections__item"><a href="" class="sections__link">Как нас найти</a></li>
+                  <li class="sections__item"><a href="" class="sections__link">На главную</a></li>
+                </ul>
+              </div>
+              <span class="mobile-divider"></span>
+              <div class="footer__media-container">
+                <p class="themed-heading">Медиа</p>
+                <ul class="footer__media-list">
+                  <li class="media__item"><a href="" class="media__link">Блог</a></li>
+                  <li class="media__item"><a href="" class="media__link">Информация для СМИ</a></li>
+                  <li class="media__item"><a href="" class="media__link">Правовая информация</a></li>
+                </ul>
+              </div>
+              <span class="mobile-divider"></span>
+              <div class="footer__contacts">
+                <p class="themed-heading">Контакты</p>
+              <ul class="footer__contacts-list">
+                <li class="contacts__item"><a href="" class="contacts__link">Красногорск, Школьная 6</a></li>
+                <li class="contacts__item"><a href="tel:+79775436992" class="contacts__link">+7 (977) 543 69 92</a></li>
+              </ul>
+            </div>
+            </div>
+          </section>
+            <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+          <script src="/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>
