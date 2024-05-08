@@ -4641,9 +4641,125 @@ document.addEventListener('DOMContentLoaded', function() {
       const imageBox = container.querySelector('.card__image-box');
       const imageName = `catalog-plate-${index + 1}.jpg`;
       imageBox.style.backgroundImage = `url('images/${imageName}')`;
+      imageBox.setAttribute('data-image-source', `images/${imageName}`);
   });
 });
 
+// CART
+if (document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready)
+} else {
+  ready()
+}
+
+function ready() {
+  var removeCartItemButtons = document.getElementsByClassName('item__remove')
+  for (var i = 0; i < removeCartItemButtons.length; i++) {
+      var button = removeCartItemButtons[i]
+      button.addEventListener('click', removeCartItem)
+  }
+
+  var quantityInputs = document.getElementsByClassName('cart__quantity-input')
+  for (var i = 0; i < quantityInputs.length; i++) {
+      var input = quantityInputs[i]
+      input.addEventListener('change', quantityChanged)
+  }
+
+  var addToCartButtons = document.getElementsByClassName('card__button')
+  for (var i = 0; i < addToCartButtons.length; i++) {
+      var button = addToCartButtons[i]
+      button.addEventListener('click', addToCartClicked)
+  }
+
+  cartOpened();
+
+  document.getElementsByClassName('checkout-button')[0].addEventListener('click', purchaseClicked)
+}
+
+function cartOpened () {
+  var checkout = document.getElementById('checkout');
+  checkout.addEventListener('click', updateCartTotal);
+}
+
+function purchaseClicked() {
+  alert('Спасибо за покупку')
+  var cartItems = document.getElementsByClassName('cart__items-table')[0]
+  while (cartItems.hasChildNodes()) {
+      cartItems.removeChild(cartItems.firstChild)
+  }
+  updateCartTotal()
+}
+
+function removeCartItem(event) {
+  var buttonClicked = event.target
+  buttonClicked.parentElement.remove()
+  updateCartTotal()
+}
+
+function quantityChanged(event) {
+  var input = event.target
+  if (isNaN(input.value) || input.value <= 0) {
+      input.value = 1
+  }
+  updateCartTotal()
+}
+
+function addToCartClicked(event) {
+  var button = event.target;
+  var shopItem = button.parentElement.parentElement;
+  var title = shopItem.getElementsByClassName('catalog__card-heading')[0].innerText;
+  var price = shopItem.getElementsByClassName('catalog__card-price')[0].innerText;
+  var imageSrc = shopItem.getElementsByClassName('card__image-box')[0].getAttribute('data-image-source');
+
+  addItemToCart(title, price, imageSrc);
+  updateCartTotal();
+}
+
+function addItemToCart(title, price, imageSrc) {
+  var cartRow = document.createElement('div');
+  cartRow.classList.add('cart__item-container');
+  var cartItems = document.getElementsByClassName('cart__items-table')[0];
+  var cartItemNames = cartItems.getElementsByClassName('item__naming');
+
+  for (var i = 0; i < cartItemNames.length; i++) {
+    if (cartItemNames[i].innerText == title) {
+      alert('This item is already added to the cart');
+      return;
+    }
+  }
+
+  var cartRowContents = `
+    <div class="image-container" style="background-image: url('${imageSrc}') !important;" width="40" height="50"></div>
+    <span class="cart-item-title">${title}</span>
+    <div class="item__quantity"><input class="cart__quantity-input" type="number" value="1"></div>
+    <div class="item__price"><span class="cart__pricing">${price}</span></div>
+    <div class="item__remove">❌</div>
+  `;
+
+  cartRow.innerHTML = cartRowContents;
+  cartItems.append(cartRow);
+  cartRow.getElementsByClassName('item__remove')[0].addEventListener('click', removeCartItem);
+  cartRow.getElementsByClassName('cart__quantity-input')[0].addEventListener('change', quantityChanged);
+
+  updateCartTotal();
+}
+
+
+function updateCartTotal() {
+  var cartItemContainer = document.getElementsByClassName('cart__items-table')[0]
+  var cartRows = cartItemContainer.getElementsByClassName('cart__item-container')
+  var total = 0
+  for (var i = 0; i < cartRows.length; i++) {
+      var cartRow = cartRows[i]
+      var priceElement = cartRow.getElementsByClassName('cart__pricing')[0]
+      var quantityElement = cartRow.getElementsByClassName('cart__quantity-input')[0]
+      var price = parseFloat(priceElement.innerText.replace('₽', ''))
+      var quantity = quantityElement.value
+      total = total + (price * quantity)
+  }
+  total = Math.round(total * 100) / 100
+  document.getElementsByClassName('grand-total')[0].innerText = '₽' + total
+}
 
 
 // YANDEX MAP
@@ -4653,3 +4769,9 @@ const map = new ymaps3.YMap(document.getElementById('YMapsID'), {
     zoom: 10
   }
 });
+
+
+
+
+    // var buttonClicked = event.target;
+    // buttonClicked.parentElement.remove();

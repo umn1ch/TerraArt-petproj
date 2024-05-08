@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="styles/css/bootstrap.css">
     <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="nouislider/dist/nouislider.css">
+    <link href="https://db.onlinewebfonts.com/c/2547970600ac97f5d9bd0ebcc1f2dd9d?family=Font+Awesome+5+Brands" rel="stylesheet">
     <script src="nouislider/dist/nouislider.js"></script>
     <script src="nouislider/dist/nouislider.mjs"></script>
     <script src="scripts/index.js" defer></script>
@@ -47,7 +48,7 @@
             </ul>
             <span class="target"></span>
         </div>
-        <a href="#" class="nav-link mobile-hidden" id="login" onclick="window.loginPanel.showModal();">
+        <a class="nav-link mobile-hidden" id="login" onclick="window.loginPanel.showModal();" style="cursor: pointer;">
           <img src="/source/images/icons/navigation account.svg" alt="#">
             <p class="mobile-hidden-text">Войти</p>
         </a>
@@ -57,9 +58,9 @@
               <form action="#">
                 <h1>Создать аккаунт</h1>
                 <div class="social-container">
-                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                  <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.facebook.com" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.google.com" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="https://www.linkedin.com" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>или использовать свой e-mail</span>
                 <input type="text" placeholder="Как нам Вас называть?" />
@@ -72,9 +73,9 @@
               <form action="#">
                 <h1>Войти</h1>
                 <div class="social-container">
-                  <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-                  <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-                  <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.facebook.com" class="social"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.google.com" class="social"><i class="fab fa-google-plus-g"></i></a>
+                  <a href="https://www.linkedin.com" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>или использовать свой аккаунт</span>
                 <input type="email" placeholder="Ваша почта" />
@@ -102,10 +103,43 @@
             id="login-close">❌</button>
           </div>
         </dialog>
-        <a href="#" class="nav-link mobile-hidden">
+        <a class="nav-link mobile-hidden" id="checkout" onclick="window.cart.showModal();" style="cursor: pointer;">
           <img src="/source/images/icons/navigation basket.svg" alt="#">
             <p class="mobile-hidden-text">Корзина</p>
         </a>
+        <dialog id="cart">
+          <div class="container" id="container">
+
+              <div class="table__headings">
+                <span class="cart__table-heading">Товар</span>
+                <span class="cart__table-heading">Количество</span>
+                <span class="cart__table-heading">Стоимость</span>
+              </div>
+              <div class="cart__items-table">
+                <!-- <div class="cart__item-container">
+                  <div class="item__naming"><div class="image-container"></div>
+                  <span class="cart-item-title">Тарелка 1</span></div>
+                  <div class="item__quantity"><input class="cart__quantity-input" type="number" value="1"></div>
+                  <div class="item__price"><span class="cart__pricing">₽225</span></div>
+                  <div class="item__remove">❌</div>
+                </div>
+                <div class="cart__item-container">
+                  <div class="item__naming"><div class="image-container"></div>Тарелка 7</div>
+                  <div class="item__quantity"><input class="cart__quantity-input" type="number" value="1"></div>
+                  <div class="item__price"><span class="cart__pricing">₽400</span></div>
+                  <div class="item__remove">❌</div>
+                </div> -->
+              </div>
+
+              <div class="end-checkout__container">
+                <div class="total-container"><span>Итого:</span><span class="grand-total">₽225</span></div>
+                <button class="checkout-button">К оплате</button>
+              </div>
+            <button class="cart-close ghost" onclick="window.cart.close();"
+            aria-label="close" class="x"
+            id="cart-close">❌</button>
+          </div>
+        </dialog>
       </nav>
       <section class="first-section" id="main">
         <!-- DESKTOP SLIDER -->
@@ -317,7 +351,7 @@
               <p class="catalog__card-heading text-heading"></p>
               <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
               <div class="card__checkout-box">
-                <p class="catalog__card-price price">225₽</p>
+                <p class="catalog__card-price price">₽225</p>
                 <p class="card__button primary-button button">
                   <img src="/source/images/icons/checkout button.svg" alt="">
                   В корзину
@@ -329,7 +363,7 @@
               <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
               <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
               <div class="card__checkout-box">
-                <p class="catalog__card-price price">225₽</p>
+                <p class="catalog__card-price price">₽225</p>
                 <p class="card__button primary-button button">
                   <img src="/source/images/icons/checkout button.svg" alt="">
                   В корзину
@@ -341,7 +375,7 @@
               <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
               <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
               <div class="card__checkout-box">
-                <p class="catalog__card-price price">225₽</p>
+                <p class="catalog__card-price price">₽225</p>
                 <p class="card__button primary-button button">
                   <img src="/source/images/icons/checkout button.svg" alt="">
                   В корзину
@@ -353,7 +387,7 @@
               <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
               <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
               <div class="card__checkout-box">
-                <p class="catalog__card-price price">225₽</p>
+                <p class="catalog__card-price price">₽225</p>
                 <p class="card__button primary-button button">
                   <img src="/source/images/icons/checkout button.svg" alt="">
                   В корзину
@@ -365,7 +399,7 @@
               <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
               <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
               <div class="card__checkout-box">
-                <p class="catalog__card-price price">225₽</p>
+                <p class="catalog__card-price price">₽225</p>
                 <p class="card__button primary-button button">
                   <img src="/source/images/icons/checkout button.svg" alt="">
                   В корзину
@@ -377,7 +411,7 @@
               <p class="catalog__card-heading text-heading">Декаф Флет Уайт</p>
               <p class="catalog__card-description text-description">Кофе без кофеина из Эфиопии с натуральным фермерским молоком</p>
               <div class="card__checkout-box">
-                <p class="catalog__card-price price">225₽</p>
+                <p class="catalog__card-price price">₽225</p>
                 <p class="card__button primary-button button">
                   <img src="/source/images/icons/checkout button.svg" alt="">
                   В корзину

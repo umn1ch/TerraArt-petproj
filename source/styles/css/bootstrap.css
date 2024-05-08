@@ -14822,3 +14822,199 @@ input[type=checkbox]:disabled {
 label:has(> input:disabled) {
   cursor: not-allowed !important;
 }
+
+.fab {
+  font-family: "Font Awesome 5 Brands";
+  font-weight: 400;
+}
+
+.fa-facebook-f:before {
+  content: "\f39e";
+  color: #DDDDDD;
+  font-style: normal;
+}
+
+.fa-google-plus-g:before {
+  content: "\f0d5";
+  color: #DDDDDD;
+  font-style: normal;
+}
+
+.fa-linkedin-in:before {
+  content: "\f0e1";
+  color: #DDDDDD;
+  font-style: normal;
+}
+
+#cart {
+  padding: 0;
+  border: none;
+  border-radius: 22px;
+  max-width: 1000px;
+  /* Для Chrome, Safari, Edge, Opera */
+  /* Для Firefox */
+}
+#cart::-ms-backdrop {
+  animation: fadeIn 1s ease both;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  backdrop-filter: blur(5px);
+}
+#cart::backdrop {
+  -webkit-animation: fadeIn 1s ease both;
+          animation: fadeIn 1s ease both;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+#cart button.cart-close {
+  position: absolute;
+  z-index: 1000;
+  left: 85%;
+  top: 1%;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+#cart button.ghost {
+  background-color: transparent;
+}
+#cart button {
+  border-radius: 20px;
+  border: 1px solid rgb(188, 152, 126);
+  background-color: rgb(188, 152, 126);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  -webkit-transition: -webkit-transform 80ms ease-in;
+  transition: -webkit-transform 80ms ease-in;
+  transition: transform 80ms ease-in;
+  transition: transform 80ms ease-in, -webkit-transform 80ms ease-in;
+}
+#cart .container {
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  width: 768px;
+  max-width: 100%;
+  min-height: 480px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding-top: 100px;
+}
+#cart .table__headings {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  left: 0%;
+  top: 13%;
+  width: calc(768px - 0.625rem);
+}
+#cart .cart__items-table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+#cart .cart__item-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+#cart .image-container {
+  height: 50px;
+  width: 40px;
+  margin-right: 35px;
+  background-image: url(../../images/catalog-plate-1.jpg);
+  background-size: cover;
+  border-radius: 4px;
+}
+#cart .item__naming {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 160px;
+}
+#cart .item__quantity {
+  position: absolute;
+  left: 43%;
+}
+#cart .item__price {
+  position: absolute;
+  left: 80%;
+}
+#cart .item__remove {
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  cursor: pointer;
+  position: absolute;
+  left: 95%;
+}
+#cart input {
+  border: solid rgb(188, 152, 126) 2px;
+  border-radius: 4px;
+  width: 50px;
+  text-align: center;
+}
+#cart input::-webkit-outer-spin-button,
+#cart input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+#cart input[type=number] {
+  -moz-appearance: textfield;
+}
+#cart .end-checkout__container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  top: 40%;
+  left: 55%;
+}
+#cart .grand-total {
+  margin-left: 15px;
+}
+#cart .checkout-button {
+  margin-left: 40px;
+}
